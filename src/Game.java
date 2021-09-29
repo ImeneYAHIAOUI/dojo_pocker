@@ -12,14 +12,15 @@ public class Game {
     * */
     public Game(){
         System.out.println("Faites chauffer votre clavier");
+        System.out.println("Entrer les cartes de la main 1");
         main1 = new Main();
         main2 = new Main();
         System.out.println("Voici vos cartes : " + main1.getCarte() + " et " + main2.getCarte());
 
         //Etape comparaison
         System.out.println("Le gagnant à la carte: "+comparaison());
-        System.out.println(main1.getMaxCarte());
-        System.out.println(main2.getMaxCarte());
+        //System.out.println(main1.getMaxCarte());
+        //System.out.println(main2.getMaxCarte());
     }
 
     public String comparaison(){
