@@ -19,7 +19,6 @@ public class Main {
         for (int i = 0; i < NB_CARTE_MAIN; i++){
             cartes.add(new Carte(new InputReader().toString()));
         }
-        //System.out.println(carte.getValue());
         getTrieCartes();
     }
 
