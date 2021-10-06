@@ -15,6 +15,7 @@ public class Carte {
     }
 
     public Integer getIntValue(){
+
         return Integer.parseInt(this.value);
     }
 

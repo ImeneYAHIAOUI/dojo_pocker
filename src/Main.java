@@ -4,9 +4,8 @@ import java.util.Collections;
 public class Main {
 
     //private Carte carte;
-    private ArrayList<Carte> cartes = new ArrayList<>();
+    public ArrayList<Carte> cartes = new ArrayList<>();
     private ArrayList<Integer> cartestriees = new ArrayList<>();
-    private final int NB_CARTE_MAIN = 2;
     private String MaxCarte;
 
     /*
@@ -16,9 +15,7 @@ public class Main {
     * */
 
     public Main(){
-        for (int i = 0; i < NB_CARTE_MAIN; i++){
-            cartes.add(new Carte(new InputReader().toString()));
-        }
+        cartes = new InputReader().getMain_joueur();
         //System.out.println(carte.getValue());
         getTrieCartes();
     }
