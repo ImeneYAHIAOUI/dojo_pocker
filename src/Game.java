@@ -4,12 +4,12 @@ public class Game {
     private Main main1, main2;
 
     /*
-    * On déclare les 2 objets mains
-    *
-    * Création de l'objet comparaison qui fait appel à la class avec comme param les 2 mains
-    * On print le retour de la méthode comparaison qui renvoie la carte qui a permit de gagner
-    *
-    * */
+     * On déclare les 2 objets mains
+     *
+     * Création de l'objet comparaison qui fait appel à la class avec comme param les 2 mains
+     * On print le retour de la méthode comparaison qui renvoie la carte qui a permit de gagner
+     *
+     * */
     public Game(){
         System.out.print("Main 1: ");
         main1 = new Main();

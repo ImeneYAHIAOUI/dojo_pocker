@@ -9,10 +9,10 @@ public class Main {
     private String MaxCarte;
 
     /*
-    * Instance de chaque carte définie par la variable NB_CARTE_MAIN
-    *
-    * Un getCarte pour retourner la liste de carte
-    * */
+     * Instance de chaque carte définie par la variable NB_CARTE_MAIN
+     *
+     * Un getCarte pour retourner la liste de carte
+     * */
 
     public Main(){
         cartes = new InputReader().getMain_joueur();
