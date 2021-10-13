@@ -13,8 +13,8 @@ public class Comparaison {
         Cartes_Main_2 = main2;
 
         //Test de paire
-        Paire paire_main1 = new Paire(Cartes_Main_1.getCarte());
-        Paire paire_main2 = new Paire(Cartes_Main_2.getCarte());
+        Paire paire_main1 = new Paire(Cartes_Main_1.getCartes());
+        Paire paire_main2 = new Paire(Cartes_Main_2.getCartes());
 
         if (paire_main1.isPaire() && !paire_main2.isPaire()) System.out.println("C'est la main 1 qui gagne avec une paire de la carte "+paire_main1);
         else System.out.println("C'est la main 1 qui gagne avec une paire de la carte "+paire_main2);

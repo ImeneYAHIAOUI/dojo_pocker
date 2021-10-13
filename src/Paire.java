@@ -12,7 +12,13 @@ public class Paire{
     public Paire(ArrayList<Carte> Cartes_main){
         this.cartes_main = Cartes_main;
         for (int i = 1;i<cartes_main.size(); i++){
-            if(cartes_main.get(i-1).getIntValue().equals(cartes_main.get(i).getIntValue())) carte_paire.add(cartes_main.get(i).getIntValue());
+
+            Carte currentCard = cartes_main.get(i-1);
+            Carte nextCard = cartes_main.get(i);
+
+            if(currentCard.sameValue(nextCard)){
+                carte_paire.add(cartes_main.get(i).getIntValue());
+            }
         }
 
         Collections.sort(carte_paire);
@@ -28,6 +34,10 @@ public class Paire{
             return true;
         }
         return false;
+    }
+
+    public void displayPairWinner(String winner, String winningCard){
+        System.out.println("C'est la main "+winner+" qui gagne avec paire de " + winningCard);
     }
 
     public String toString(){

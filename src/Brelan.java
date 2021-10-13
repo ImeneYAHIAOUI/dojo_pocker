@@ -1,29 +1,38 @@
 import java.util.ArrayList;
 
 
-public class Brelon {
+public class Brelan {
     ArrayList<Carte> cartes_main;
-    Carte carteBrelon;
+    Carte carteBrelan;
 
-    public Brelon(ArrayList<Carte> Cartes_main){
+    public Brelan(ArrayList<Carte> Cartes_main){
         this.cartes_main = Cartes_main;
         for (int i = 2;i<cartes_main.size(); i++){
-            if(cartes_main.get(i-2).getIntValue().equals(cartes_main.get(i-1).getIntValue())  && cartes_main.get(i-1).getIntValue().equals(cartes_main.get(i).getIntValue()) ){
-                carteBrelon = cartes_main.get(i);
+            Carte previewsCard = cartes_main.get(i-2);
+            Carte currentCard = cartes_main.get(i-1);
+            Carte nextCard = cartes_main.get(i);
+
+            if(previewsCard.sameValue(currentCard) && currentCard.sameValue(nextCard)){
+                carteBrelan = cartes_main.get(i);
+                break;
             }
         }
 
     }
 
-    public boolean isBrelon(){
-        return carteBrelon != null;
+    public boolean isBrelan(){
+        return carteBrelan != null;
     }
 
-    public Carte getCarteBrelon() {
-        return carteBrelon;
+    public Carte getCarteBrelan() {
+        return carteBrelan;
+    }
+
+    public void displayBrelanWinner(String winner, String winningCard){
+        System.out.println("C'est la main "+winner+" qui gagne avec brelan de " + winningCard);
     }
 
     public String toString(){
-        return carteBrelon.toString();
+        return carteBrelan.toString();
     }
 }

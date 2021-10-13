@@ -29,4 +29,7 @@ public class Carte {
         }
 
     }
+    public boolean sameValue(Carte carte){
+        return this.getIntValue() == carte.getIntValue();
+    }
 }
