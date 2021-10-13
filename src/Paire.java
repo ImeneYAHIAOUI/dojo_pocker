@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class Paire{
 
-    ArrayList<Carte> cartes_main = new ArrayList<>();
+    ArrayList<Carte> cartes_main;
     ArrayList<Integer> carte_paire = new ArrayList<>();
     int ValeurMaxPaire;
 
@@ -12,7 +12,7 @@ public class Paire{
     public Paire(ArrayList<Carte> Cartes_main){
         this.cartes_main = Cartes_main;
         for (int i = 1;i<cartes_main.size(); i++){
-            if(cartes_main.get(i-1).getIntValue() == cartes_main.get(i).getIntValue()) carte_paire.add(cartes_main.get(i).getIntValue());
+            if(cartes_main.get(i-1).getIntValue().equals(cartes_main.get(i).getIntValue())) carte_paire.add(cartes_main.get(i).getIntValue());
         }
 
         Collections.sort(carte_paire);

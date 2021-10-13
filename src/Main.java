@@ -20,7 +20,7 @@ public class Main {
         getTrieCartes();
     }
 
-    public ArrayList<Carte> getCarte(){
+    public ArrayList<Carte> getCartes(){
         return cartes;
     }
 

@@ -15,7 +15,7 @@ public class Game {
         main1 = new Main();
         System.out.print("Main 2: ");
         main2 = new Main();
-        System.out.println("Voici vos cartes : " + main1.getCarte() + " et " + main2.getCarte());
+        System.out.println("Voici vos cartes : " + main1.getCartes() + " et " + main2.getCartes());
 
         //Etape comparaison
         System.out.println("Le gagnant à la carte: "+comparaison());

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class InputReader {
 
     private ArrayList<Carte> main_joueur;
-    private final int NB_CARTE_MAIN = 2;
+    private final int NB_CARTE_MAIN = 3;
 
     public InputReader(){
         Scanner carteInput = new Scanner(System.in);
@@ -26,7 +26,7 @@ public class InputReader {
         ArrayList<Carte> carteList = new ArrayList<>();
 
         for (String carte : list) {
-            if(toInt(carte) >=1 && toInt(carte) <= 13){
+            if(toInt(carte) >=2 && toInt(carte) <= 14){
                 carteList.add(new Carte(carte));
             }else{
                 System.out.println("Format d'une des carte incorrect");
@@ -48,8 +48,19 @@ public class InputReader {
     public ArrayList<Carte> getMain_joueur(){
         return main_joueur;
     }
-    public int toInt(String carteToInt){
-        return Integer.parseInt(carteToInt);
+    public int toInt(String carteToInt) {
+        try {
+            return Integer.parseInt(carteToInt);
+        } catch (NumberFormatException e) {
+            return switch (carteToInt) {
+                case "V" -> 11;
+                case "D" -> 12;
+                case "R" -> 13;
+                case "A" -> 14;
+                default -> 0;
+            };
+
+        }
     }
 
 
