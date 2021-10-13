@@ -2,8 +2,8 @@ public class Carte {
 
 
     /*
-    * Juste pour la carte soit un objet et renvoie sa valeur sous forme de string
-    * */
+     * Juste pour la carte soit un objet et renvoie sa valeur sous forme de string
+     * */
     private final String value;
 
     public Carte(String value){
@@ -28,7 +28,5 @@ public class Carte {
 
         }
 
-        }
+    }
 }
-
-

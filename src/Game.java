@@ -18,16 +18,14 @@ public class Game {
         System.out.println("Voici vos cartes : " + main1.getCartes() + " et " + main2.getCartes());
 
         //Etape comparaison
-        //System.out.println("Le gagnant à la carte: "+comparaison());
+        System.out.println("Le gagnant à la carte: "+comparaison());
         //System.out.println(main1.getMaxCarte());
         //System.out.println(main2.getMaxCarte());
 
-        //Etape comparaison
-        comparaison();
-
     }
 
-    public void comparaison(){
+    public String comparaison(){
         Comparaison comp1 = new Comparaison(main1, main2);
+        return comp1.toString();
     }
 }

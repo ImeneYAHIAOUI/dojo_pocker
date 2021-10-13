@@ -7,8 +7,8 @@ public class Poker {
         Game game1 = new Game();
 
         /*
-        * TypeCarte hérite de Carte
-        * CouleurTypeCarte hérite de Carte
-        * */
+         * TypeCarte hérite de Carte
+         * CouleurTypeCarte hérite de Carte
+         * */
     }
 }
