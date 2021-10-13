@@ -4,32 +4,53 @@ public class Carte {
     /*
      * Juste pour la carte soit un objet et renvoie sa valeur sous forme de string
      * */
-    private final String value;
-
-    public Carte(String value){
+    private String value;
+    protected Integer intValue;
+    public Carte(String value) {
         this.value = value;
-    }
-
-    public String toString(){
-        return this.value;
-    }
-
-
-    public Integer getIntValue(){
         try {
-            return Integer.parseInt(value);
-        }catch (NumberFormatException e){
-            return switch (value) {
-                case "V" -> 11;
-                case "D" -> 12;
-                case "R" -> 13;
-                default -> 14;
-            };
+            intValue = Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            switch (value) {
+                case "V":
+                    intValue = 11;
+                    break;
+
+                case "D":
+                    intValue = 12;
+                    break;
+
+                case "R":
+                    intValue = 13;
+                    break;
+                default:
+                    intValue = 14;
+                    break;
+            }
+            ;
 
         }
 
     }
+
+    public String toString(){
+        if(intValue < 11){
+            return value;
+        }
+        return switch(intValue){
+            case 11 -> "V";
+            case 12 -> "D";
+            case 13 -> "R";
+            default -> "A";
+        };
+    }
+
+
+    public Integer getIntValue() {
+        return intValue;
+    }
+
     public boolean sameValue(Carte carte){
-        return this.getIntValue() == carte.getIntValue();
+        return this.intValue == carte.intValue;
     }
 }

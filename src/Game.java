@@ -18,14 +18,17 @@ public class Game {
         System.out.println("Voici vos cartes : " + main1.getCartes() + " et " + main2.getCartes());
 
         //Etape comparaison
-        System.out.println("Le gagnant à la carte: "+comparaison());
-        //System.out.println(main1.getMaxCarte());
-        //System.out.println(main2.getMaxCarte());
+        Comparaison winningHand = new Comparaison(main1,main2);
+
+        String winner = winningHand.toString();
+        Carte winningCard = winningHand.getWinningCard();
+        String methodeComparaison = winningHand.getMethodeComparaison();
+
+        System.out.println(new displayWinner(winner,winningCard,methodeComparaison));
+
+
 
     }
 
-    public String comparaison(){
-        Comparaison comp1 = new Comparaison(main1, main2);
-        return comp1.toString();
-    }
+
 }

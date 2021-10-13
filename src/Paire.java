@@ -36,9 +36,10 @@ public class Paire{
         return false;
     }
 
-    public void displayPairWinner(String winner, Carte winningCard){
-        System.out.println("C'est la main "+winner+" qui gagne avec paire de " + winningCard);
+    public Carte getMaxPaire(){
+        return new Carte(Integer.toString(ValeurMaxPaire));
     }
+
 
     public String toString(){
         return String.valueOf(ValeurMaxPaire);
