@@ -36,7 +36,7 @@ public class Paire{
         return false;
     }
 
-    public void displayPairWinner(String winner, String winningCard){
+    public void displayPairWinner(String winner, Carte winningCard){
         System.out.println("C'est la main "+winner+" qui gagne avec paire de " + winningCard);
     }
 

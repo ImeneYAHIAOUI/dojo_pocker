@@ -6,7 +6,7 @@ public class Main {
     //private Carte carte;
     public ArrayList<Carte> cartes = new ArrayList<>();
     private ArrayList<Integer> cartestriees = new ArrayList<>();
-    private String MaxCarte;
+    private Carte MaxCarte;
 
     /*
      * Instance de chaque carte définie par la variable NB_CARTE_MAIN
@@ -31,10 +31,11 @@ public class Main {
             cartesTrie.add(cartes.get(i).getIntValue());
         }
         Collections.sort(cartesTrie);
-        MaxCarte = Integer.toString(cartesTrie.get(cartesTrie.size()-1));
+        String Max = Integer.toString(cartesTrie.get(cartesTrie.size()-1));
+        MaxCarte = new Carte(Max);
     }
 
-    public String getMaxCarte(){
+    public Carte getMaxCarte(){
         return MaxCarte;
     }
 

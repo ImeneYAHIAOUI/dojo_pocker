@@ -28,7 +28,7 @@ public class Brelan {
         return carteBrelan;
     }
 
-    public void displayBrelanWinner(String winner, String winningCard){
+    public void displayBrelanWinner(String winner, Carte winningCard){
         System.out.println("C'est la main "+winner+" qui gagne avec brelan de " + winningCard);
     }
 
