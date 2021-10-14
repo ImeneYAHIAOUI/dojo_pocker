@@ -8,18 +8,15 @@ public class Main {
     private ArrayList<Integer> cartestriees = new ArrayList<>();
     private Carte MaxCarte;
 
-    /*
-     * Instance de chaque carte définie par la variable NB_CARTE_MAIN
-     *
-     * Un getCarte pour retourner la liste de carte
-     * */
-
     public Main(){
         cartes = new InputReader().getMain_joueur();
-        //System.out.println(carte.getValue());
         getTrieCartes();
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Carte> getCartes(){
         return cartes;
     }
@@ -35,11 +32,12 @@ public class Main {
         MaxCarte = new Carte(Max);
     }
 
+    /**
+     *
+     * @return
+     */
     public Carte getMaxCarte(){
         return MaxCarte;
     }
 
-
-    //public String toString(){ return on verra;
-    //}
 }

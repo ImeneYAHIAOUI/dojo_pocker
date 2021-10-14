@@ -45,9 +45,20 @@ public class InputReader {
 
 
     }
+
+    /**
+     *
+     * @return
+     */
     public ArrayList<Carte> getMain_joueur(){
         return main_joueur;
     }
+
+    /**
+     *
+     * @param carteToInt
+     * @return
+     */
     public int toInt(String carteToInt) {
         try {
             return Integer.parseInt(carteToInt);
