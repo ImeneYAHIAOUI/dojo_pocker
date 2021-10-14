@@ -8,16 +8,21 @@ public class Paire{
     int ValeurMaxPaire;
 
 
-    //boucle qui permet de détecter les paires (ici plusieurs si besoin)
+    /**
+     *
+     * @param Cartes_main
+     */
     public Paire(ArrayList<Carte> Cartes_main){
         this.cartes_main = Cartes_main;
+
+
         for (int i = 1;i<cartes_main.size(); i++){
 
             Carte currentCard = cartes_main.get(i-1);
             Carte nextCard = cartes_main.get(i);
 
             if(currentCard.sameValue(nextCard)){
-                carte_paire.add(cartes_main.get(i).getIntValue());
+                carte_paire.add(currentCard.getIntValue());
             }
         }
 
@@ -25,11 +30,13 @@ public class Paire{
     }
 
     public boolean isPaire(){
-        if(carte_paire.size()==2){
-            ValeurMaxPaire = carte_paire.get(1);
+        int nbPaire = carte_paire.size();
+
+        if(nbPaire==2){
+            ValeurMaxPaire = carte_paire.get(nbPaire-1);
             return true;
         }
-        if(carte_paire.size() == 1){
+        if(nbPaire == 1){
             ValeurMaxPaire = carte_paire.get(0);
             return true;
         }

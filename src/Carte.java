@@ -6,6 +6,11 @@ public class Carte {
      * */
     private String value;
     protected Integer intValue;
+
+    /**
+     *
+     * @param value
+     */
     public Carte(String value) {
         this.value = value;
         try {
@@ -33,6 +38,10 @@ public class Carte {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString(){
         if(intValue < 11){
             return value;
@@ -45,11 +54,19 @@ public class Carte {
         };
     }
 
-
+    /**
+     *
+     * @return
+     */
     public Integer getIntValue() {
         return intValue;
     }
 
+    /**
+     *
+     * @param carte
+     * @return
+     */
     public boolean sameValue(Carte carte){
         return this.intValue == carte.intValue;
     }

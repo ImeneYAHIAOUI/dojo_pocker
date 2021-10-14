@@ -8,6 +8,11 @@ public class Comparaison {
     private String methodeComparaison;
 
 
+    /**
+     *
+     * @param main1
+     * @param main2
+     */
     public Comparaison(Main main1, Main main2){
         Cartes_Main_1 = main1;
         Cartes_Main_2 = main2;
@@ -21,8 +26,12 @@ public class Comparaison {
     * */
 
 
-
-
+    /**
+     *
+     * @param BestCard1
+     * @param BestCard2
+     * @return
+     */
     public Carte comparaison_valeur_haute(Carte BestCard1,Carte BestCard2){
 
         if(BestCard1.getIntValue() > BestCard2.getIntValue()){
@@ -39,6 +48,12 @@ public class Comparaison {
         }
     }
 
+    /**
+     *
+     * @param carte1
+     * @param carte2
+     * @return
+     */
     public Carte comparaisonBrelans(Brelan carte1,Brelan carte2){
 
         if(carte1.isBrelan() && !carte2.isBrelan()){
@@ -54,6 +69,12 @@ public class Comparaison {
 
     }
 
+    /**
+     *
+     * @param paire1
+     * @param paire2
+     * @return
+     */
     public Carte comparaisonPaires(Paire paire1, Paire paire2){
         if(paire1.isPaire() && !paire2.isPaire()){
             winner = 1;
@@ -92,14 +113,26 @@ public class Comparaison {
     }
 
 
-
+    /**
+     *
+     * @return
+     */
     public Carte getWinningCard(){
         return winningCard;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMethodeComparaison(){
         return methodeComparaison;
     }
+
+    /**
+     *
+     * @return
+     */
     public String toString(){
         return switch (winner){
             case 1 -> "main 1";

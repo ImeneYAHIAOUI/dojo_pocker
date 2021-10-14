@@ -5,6 +5,10 @@ public class Brelan {
     ArrayList<Carte> cartes_main;
     Carte carteBrelan;
 
+    /**
+     *
+     * @param Cartes_main
+     */
     public Brelan(ArrayList<Carte> Cartes_main){
         this.cartes_main = Cartes_main;
         for (int i = 2;i<cartes_main.size(); i++){
@@ -20,16 +24,27 @@ public class Brelan {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isBrelan(){
         return carteBrelan != null;
     }
 
+    /**
+     *
+     * @return
+     */
     public Carte getCarteBrelan() {
         return carteBrelan;
     }
 
 
-
+    /**
+     *
+     * @return
+     */
     public String toString(){
         return carteBrelan.toString();
     }
