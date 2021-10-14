@@ -1,5 +1,5 @@
 public class displayWinner {
-    private Comparaison winner;
+    private final Comparaison winner;
 
     public displayWinner(Comparaison winner){
         this.winner = winner;

@@ -4,8 +4,7 @@ import java.util.Collections;
 public class Main {
 
     //private Carte carte;
-    public ArrayList<Carte> cartes = new ArrayList<>();
-    private ArrayList<Integer> cartestriees = new ArrayList<>();
+    public ArrayList<Carte> cartes;
     private Carte MaxCarte;
 
     public Main(){
@@ -24,8 +23,8 @@ public class Main {
     //on trie les cartes de la main en fonction de leurs valeurs
     public void getTrieCartes(){
         ArrayList<Integer> cartesTrie = new ArrayList<>();
-        for(int i =0; i<cartes.size(); i++){
-            cartesTrie.add(cartes.get(i).getIntValue());
+        for (Carte carte : cartes) {
+            cartesTrie.add(carte.getIntValue());
         }
         Collections.sort(cartesTrie);
         String Max = Integer.toString(cartesTrie.get(cartesTrie.size()-1));

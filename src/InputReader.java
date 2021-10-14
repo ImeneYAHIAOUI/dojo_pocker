@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InputReader {
 
-    private ArrayList<Carte> main_joueur;
+    private final ArrayList<Carte> main_joueur;
     private final int NB_CARTE_MAIN = 3;
 
     public InputReader(){
