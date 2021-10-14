@@ -1,7 +1,6 @@
 public class Game {
 
-    private final int NB_CARTE_MAIN = 1;
-    private Main main1, main2;
+    private final Main main1, main2;
 
     /*
      * On déclare les 2 objets mains

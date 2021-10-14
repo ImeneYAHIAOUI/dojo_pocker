@@ -25,8 +25,8 @@ public class Comparaison {
 
     public Carte comparaison_valeur_haute(Carte BestCard1,Carte BestCard2){
 
+        if(BestCard1.getIntValue() > BestCard2.getIntValue()){
 
-        if(BestCard1.sameValue(BestCard2)){
             winner = 1;
             return BestCard1;
         }
@@ -35,7 +35,7 @@ public class Comparaison {
             return BestCard2;
         }else{
             winner = 0;
-            return new Carte(null);
+            return null;
         }
     }
 
@@ -85,7 +85,7 @@ public class Comparaison {
             methodeComparaison = "paire";
         }
         else {
-            winningCard = comparaison_valeur_haute(Cartes_Main_1.getMaxCarte(), Cartes_Main_1.getMaxCarte());
+            winningCard = comparaison_valeur_haute(Cartes_Main_1.getMaxCarte(), Cartes_Main_2.getMaxCarte());
             methodeComparaison = "valeur la plus élevée";
         }
 
