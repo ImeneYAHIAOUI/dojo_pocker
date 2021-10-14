@@ -1,17 +1,14 @@
 public class displayWinner {
-    private String winner;
-    private Carte winningCard;
-    private String methodeComparaison;
+    private Comparaison winner;
 
-    public displayWinner(String winner, Carte winningCard, String methodeComparaison){
+    public displayWinner(Comparaison winner){
         this.winner = winner;
-        this.winningCard = winningCard;
-        this.methodeComparaison = methodeComparaison;
+
     }
     public String toString(){
-        if(winner.equals("Egalité")){
-            return winner;
+        if(winner.toString().equals("Egalité")){
+            return winner.toString();
         }
-        return "C'est la "+winner+" qui gagne avec "+methodeComparaison+" : " + winningCard;
+        return "C'est la "+winner+" qui gagne avec "+winner.getMethodeComparaison()+" : " + winner.getWinningCard();
     }
 }

@@ -19,11 +19,8 @@ public class Game {
         //Etape comparaison
         Comparaison winningHand = new Comparaison(main1,main2);
 
-        String winner = winningHand.toString();
-        Carte winningCard = winningHand.getWinningCard();
-        String methodeComparaison = winningHand.getMethodeComparaison();
 
-        System.out.println(new displayWinner(winner,winningCard,methodeComparaison));
+        System.out.println(new displayWinner(winningHand));
 
 
 
