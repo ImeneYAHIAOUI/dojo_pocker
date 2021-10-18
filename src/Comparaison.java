@@ -1,8 +1,8 @@
 
 public class Comparaison {
 
-    private final Main Cartes_Main_1;
-    private final Main Cartes_Main_2;
+    private final Hand Cartes_Main_1;
+    private final Hand Cartes_Main_2;
     private int winner;
     private Carte winningCard;
     private String methodeComparaison;
@@ -13,7 +13,7 @@ public class Comparaison {
      * @param main1
      * @param main2
      */
-    public Comparaison(Main main1, Main main2){
+    public Comparaison(Hand main1, Hand main2){
         Cartes_Main_1 = main1;
         Cartes_Main_2 = main2;
         winnerSetter();
@@ -69,6 +69,22 @@ public class Comparaison {
 
     }
 
+    public Carte comparaison2Paires(Paire paire1, Paire paire2){
+        if(paire1.is2Paire() && !paire2.is2Paire()){
+            winner = 1;
+
+            return paire1.getMaxPaire();
+
+        }else if (!paire1.is2Paire() && paire2.is2Paire()) {
+            winner = 2;
+            return paire2.getMaxPaire();
+        }
+        return comparaison_valeur_haute(paire1.getMaxPaire(),paire2.getMaxPaire());
+
+
+
+    }
+
     /**
      *
      * @param paire1
@@ -98,6 +114,11 @@ public class Comparaison {
             winningCard = comparaisonBrelans(brelan1,brelan2);
             methodeComparaison = "brelan";
 
+        }
+
+        else if(paire_main1.is2Paire() || paire_main2.is2Paire()){
+            winningCard = comparaison2Paires(paire_main1,paire_main2);
+            methodeComparaison = "double paire";
         }
 
 

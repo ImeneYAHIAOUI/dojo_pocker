@@ -1,6 +1,6 @@
 public class Game {
 
-    private final Main main1, main2;
+    private final Hand main1, main2;
 
     /*
      * On déclare les 2 objets mains
@@ -11,9 +11,9 @@ public class Game {
      * */
     public Game(){
         System.out.print("Main 1: ");
-        main1 = new Main();
+        main1 = new Hand();
         System.out.print("Main 2: ");
-        main2 = new Main();
+        main2 = new Hand();
         System.out.println("Voici vos cartes : " + main1.getCartes() + " et " + main2.getCartes());
 
         //Etape comparaison

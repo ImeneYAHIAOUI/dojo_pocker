@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Main {
+public class Hand {
 
     //private Carte carte;
     public ArrayList<Carte> cartes;
     private Carte MaxCarte;
 
-    public Main(){
+    public Hand(){
         cartes = new InputReader().getMain_joueur();
         getTrieCartes();
     }

@@ -21,7 +21,7 @@ public class Paire{
             Carte currentCard = cartes_main.get(i-1);
             Carte nextCard = cartes_main.get(i);
 
-            if(currentCard.sameValue(nextCard)){
+            if(currentCard.sameValue(nextCard) && ! carte_paire.contains(currentCard.getIntValue())){
                 carte_paire.add(currentCard.getIntValue());
             }
         }
@@ -29,13 +29,18 @@ public class Paire{
         Collections.sort(carte_paire);
     }
 
-    public boolean isPaire(){
+    public boolean is2Paire(){
         int nbPaire = carte_paire.size();
 
-        if(nbPaire==2){
+        if(nbPaire == 2){
             ValeurMaxPaire = carte_paire.get(nbPaire-1);
             return true;
         }
+        return false;
+    }
+    public boolean isPaire(){
+        int nbPaire = carte_paire.size();
+
         if(nbPaire == 1){
             ValeurMaxPaire = carte_paire.get(0);
             return true;
