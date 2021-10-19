@@ -8,7 +8,7 @@ public class Paire{
 
     ArrayList<Carte> cards;
     ArrayList<Integer> carte_paire = new ArrayList<>();
-    int ValeurMaxPaire;
+    protected int ValeurMaxPaire = 0;
 
 
     /**
@@ -32,6 +32,10 @@ public class Paire{
         Collections.sort(carte_paire);
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean is2Paire(){
         int nbPaire = carte_paire.size();
 
@@ -41,6 +45,11 @@ public class Paire{
         }
         return false;
     }
+
+    /**
+     *
+     * @return
+     */
     public boolean isPaire(){
         int nbPaire = carte_paire.size();
 
@@ -51,18 +60,25 @@ public class Paire{
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     public Carte getMaxPaire(){
-        return new Carte(Integer.toString(ValeurMaxPaire));
+        if(ValeurMaxPaire != 0) return new Carte(Integer.toString(ValeurMaxPaire));
+        else return null;
     }
 
+    public int getValeurMaxPaire(){
+        return ValeurMaxPaire;
+    }
 
+    /**
+     *
+     * @return
+     */
     public String toString(){
         return String.valueOf(ValeurMaxPaire);
     }
-
-
-
-
-
 
 }
