@@ -6,9 +6,19 @@ public class displayWinner {
 
     }
     public String toString(){
+        Carte winningCard = winner.getWinningCard();
+        String methode = winner.getMethodeComparaison();
+
         if(winner.toString().equals("Egalité")){
             return winner.toString();
         }
-        return "C'est la "+winner+" qui gagne avec "+winner.getMethodeComparaison()+" : " + winner.getWinningCard();
+        if(methode.equals("suite") ){
+            if(winningCard==null) {
+                return "C'est la " + winner + " qui gagne " + "car c'est une suite";
+            }
+            return "C'est la " + winner + " qui gagne " + "car c'est la suite avec la carte la plus élevée : "+winningCard;
+
+        }
+        return "C'est la "+winner+" qui gagne avec "+methode+" : " + winningCard;
     }
 }

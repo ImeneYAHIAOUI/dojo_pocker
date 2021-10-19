@@ -47,6 +47,20 @@ public class Comparaison {
             return null;
         }
     }
+    public Carte comparaisonSuite(Hand main1, Hand main2){
+
+        if (main1.isSorted() && !main2.isSorted()){
+            winner = 1;
+            return null;
+        }
+        if (!main1.isSorted() && main2.isSorted()){
+            winner = 2;
+            return null;
+        }
+
+        return comparaison_valeur_haute(main1.getMaxCarte(),main2.getMaxCarte());
+
+    }
 
     /**
      *
@@ -54,6 +68,9 @@ public class Comparaison {
      * @param carte2
      * @return
      */
+
+
+
     public Carte comparaisonBrelans(Brelan carte1,Brelan carte2){
 
         if(carte1.isBrelan() && !carte2.isBrelan()){
@@ -104,13 +121,20 @@ public class Comparaison {
     }
 
     public void winnerSetter(){
-        Brelan brelan1 = new Brelan(Cartes_Main_1.getCartes());
-        Brelan brelan2 = new Brelan(Cartes_Main_2.getCartes());
+        Brelan brelan1 = new Brelan(Cartes_Main_1.getSortedCard());
+        Brelan brelan2 = new Brelan(Cartes_Main_2.getSortedCard());
 
-        Paire paire_main1 = new Paire(Cartes_Main_1.getCartes());
-        Paire paire_main2 = new Paire(Cartes_Main_2.getCartes());
+        Paire paire_main1 = new Paire(Cartes_Main_1.getSortedCard());
+        Paire paire_main2 = new Paire(Cartes_Main_2.getSortedCard());
 
-        if(brelan1.isBrelan() || brelan2.isBrelan()){
+        if (Cartes_Main_1.isSorted() || Cartes_Main_2.isSorted()){
+            winningCard = comparaisonSuite(Cartes_Main_1,Cartes_Main_2);
+            methodeComparaison = "suite";
+        }
+
+
+
+        else if(brelan1.isBrelan() || brelan2.isBrelan()){
             winningCard = comparaisonBrelans(brelan1,brelan2);
             methodeComparaison = "brelan";
 

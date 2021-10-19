@@ -5,7 +5,9 @@ public class Hand {
 
     //private Carte carte;
     public ArrayList<Carte> cartes;
+    public ArrayList<Carte> sortedCards = new ArrayList<>();
     private Carte MaxCarte;
+
 
     public Hand(){
         cartes = new InputReader().getMain_joueur();
@@ -27,8 +29,13 @@ public class Hand {
             cartesTrie.add(carte.getIntValue());
         }
         Collections.sort(cartesTrie);
+        for (Integer c : cartesTrie){
+            String card = Integer.toString(c);
+            sortedCards.add(new Carte(card));
+        }
         String Max = Integer.toString(cartesTrie.get(cartesTrie.size()-1));
         MaxCarte = new Carte(Max);
+
     }
 
     /**
@@ -39,4 +46,16 @@ public class Hand {
         return MaxCarte;
     }
 
+    public ArrayList<Carte> getSortedCard() {
+        return sortedCards;
+    }
+
+    public boolean isSorted(){
+        for (int i=0 ; i<cartes.size() ;i++){
+            if (! cartes.get(i).sameValue(sortedCards.get(i))){
+                return false;
+            }
+        }
+        return true;
+    }
 }
