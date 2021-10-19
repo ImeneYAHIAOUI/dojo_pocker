@@ -2,22 +2,22 @@ import java.util.ArrayList;
 
 
 public class Brelan {
-    ArrayList<Carte> cartes_main;
+    ArrayList<Carte> cards;
     Carte carteBrelan;
 
     /**
      *
-     * @param Cartes_main
+     * @param cards
      */
-    public Brelan(ArrayList<Carte> Cartes_main){
-        this.cartes_main = Cartes_main;
-        for (int i = 2;i<cartes_main.size(); i++){
-            Carte previewsCard = cartes_main.get(i-2);
-            Carte currentCard = cartes_main.get(i-1);
-            Carte nextCard = cartes_main.get(i);
+    public Brelan(ArrayList<Carte> cards){
+        this.cards = cards;
+        for (int i = 2;i<cards.size(); i++){
+            Carte previewsCard = cards.get(i-2);
+            Carte currentCard = cards.get(i-1);
+            Carte nextCard = cards.get(i);
 
             if(previewsCard.sameValue(currentCard) && currentCard.sameValue(nextCard)){
-                carteBrelan = cartes_main.get(i);
+                carteBrelan = cards.get(i);
                 break;
             }
         }

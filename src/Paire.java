@@ -3,23 +3,23 @@ import java.util.Collections;
 
 public class Paire{
 
-    ArrayList<Carte> cartes_main;
+    ArrayList<Carte> cards;
     ArrayList<Integer> carte_paire = new ArrayList<>();
     int ValeurMaxPaire;
 
 
     /**
      *
-     * @param Cartes_main
+     * @param cards
      */
-    public Paire(ArrayList<Carte> Cartes_main){
-        this.cartes_main = Cartes_main;
+    public Paire(ArrayList<Carte> cards){
+        this.cards = cards;
 
 
-        for (int i = 1;i<cartes_main.size(); i++){
+        for (int i = 1;i<cards.size(); i++){
 
-            Carte currentCard = cartes_main.get(i-1);
-            Carte nextCard = cartes_main.get(i);
+            Carte currentCard = cards.get(i-1);
+            Carte nextCard = cards.get(i);
 
             if(currentCard.sameValue(nextCard) && ! carte_paire.contains(currentCard.getIntValue())){
                 carte_paire.add(currentCard.getIntValue());
@@ -41,7 +41,7 @@ public class Paire{
     public boolean isPaire(){
         int nbPaire = carte_paire.size();
 
-        if(nbPaire == 1){
+        if(nbPaire > 0){
             ValeurMaxPaire = carte_paire.get(0);
             return true;
         }

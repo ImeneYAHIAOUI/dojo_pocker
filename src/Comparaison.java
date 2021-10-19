@@ -1,8 +1,8 @@
 
 public class Comparaison {
 
-    private final Hand Cartes_Main_1;
-    private final Hand Cartes_Main_2;
+    private final Hand hand1;
+    private final Hand hand2;
     private int winner;
     private Carte winningCard;
     private String methodeComparaison;
@@ -14,8 +14,8 @@ public class Comparaison {
      * @param main2
      */
     public Comparaison(Hand main1, Hand main2){
-        Cartes_Main_1 = main1;
-        Cartes_Main_2 = main2;
+        hand1 = main1;
+        hand2 = main2;
         winnerSetter();
     }
 
@@ -47,8 +47,19 @@ public class Comparaison {
             return null;
         }
     }
-    public Carte comparaisonSuite(Hand main1, Hand main2){
 
+    public Carte compareisonFull(Full full1, Full full2){
+        if (full1.isFull() && !full2.isFull()){
+            winner = 1;
+            return null;
+        }
+        if (!full1.isFull() && full2.isFull()){
+            winner = 2;
+            return null;
+        }
+        return comparaisonBrelans(full1.getBrelan(), full2.getBrelan());
+    }
+    public Carte comparaisonSuite(Hand main1, Hand main2){
         if (main1.isSorted() && !main2.isSorted()){
             winner = 1;
             return null;
@@ -121,14 +132,22 @@ public class Comparaison {
     }
 
     public void winnerSetter(){
-        Brelan brelan1 = new Brelan(Cartes_Main_1.getSortedCard());
-        Brelan brelan2 = new Brelan(Cartes_Main_2.getSortedCard());
+        Full full1 =new Full(hand1);
+        Full full2 =new Full(hand2);
+        Brelan brelan1 = new Brelan(hand1.getSortedCard());
+        Brelan brelan2 = new Brelan(hand2.getSortedCard());
 
-        Paire paire_main1 = new Paire(Cartes_Main_1.getSortedCard());
-        Paire paire_main2 = new Paire(Cartes_Main_2.getSortedCard());
+        Paire paire_main1 = new Paire(hand1.getSortedCard());
+        Paire paire_main2 = new Paire(hand2.getSortedCard());
 
-        if (Cartes_Main_1.isSorted() || Cartes_Main_2.isSorted()){
-            winningCard = comparaisonSuite(Cartes_Main_1,Cartes_Main_2);
+        if (full1.isFull() || full2.isFull()){
+
+            winningCard = compareisonFull(full1,full2);
+            methodeComparaison = "full";
+
+        }
+        else if (hand1.isSorted() || hand2.isSorted()){
+            winningCard = comparaisonSuite(hand1,hand2);
             methodeComparaison = "suite";
         }
 
@@ -151,7 +170,7 @@ public class Comparaison {
             methodeComparaison = "paire";
         }
         else {
-            winningCard = comparaison_valeur_haute(Cartes_Main_1.getMaxCarte(), Cartes_Main_2.getMaxCarte());
+            winningCard = comparaison_valeur_haute(hand1.getMaxCarte(), hand2.getMaxCarte());
             methodeComparaison = "valeur la plus élevée";
         }
 
