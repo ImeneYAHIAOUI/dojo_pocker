@@ -3,6 +3,7 @@ package poker;
 import comparaison.Brelan;
 import comparaison.Full;
 import comparaison.Paire;
+import comparaison.Suite;
 
 public class Comparaison {
 
@@ -70,17 +71,18 @@ public class Comparaison {
         }
         return comparaisonBrelans(full1.getBrelan(), full2.getBrelan());
     }
-    public Carte comparaisonSuite(Hand main1, Hand main2){
-        if (main1.isSorted() && !main2.isSorted()){
+    public Carte comparaisonSuite(Suite suite1, Suite suite2){
+        if (suite1.isSuite() && !suite2.isSuite()){
             winner = 1;
             return null;
         }
-        if (!main1.isSorted() && main2.isSorted()){
+        if (!suite1.isSuite() && suite2.isSuite()){
             winner = 2;
             return null;
         }
-
-        return comparaison_valeur_haute(main1.getMaxCarte(),main2.getMaxCarte());
+        Hand hand1 = suite1.getHand();
+        Hand hand2 = suite2.getHand();
+        return comparaison_valeur_haute(hand1.getMaxCarte(),hand2.getMaxCarte());
 
     }
 
@@ -150,8 +152,12 @@ public class Comparaison {
      * Setter des poids des comparaisons
      */
     public void winnerSetter(){
+        Suite suite1 = new Suite(hand1);
+        Suite suite2 = new Suite(hand2);
+
         Full full1 =new Full(hand1);
         Full full2 =new Full(hand2);
+
         Brelan brelan1 = new Brelan(hand1.getSortedCard());
         Brelan brelan2 = new Brelan(hand2.getSortedCard());
 
@@ -162,8 +168,8 @@ public class Comparaison {
             winningCard = compareisonFull(full1,full2);
             methodeComparaison = "full";
         }
-        else if (hand1.isSorted() || hand2.isSorted()){
-            winningCard = comparaisonSuite(hand1,hand2);
+        else if (suite1.isSuite() || suite2.isSuite()){
+            winningCard = comparaisonSuite(suite1,suite2);
             methodeComparaison = "suite";
         }
         else if(brelan1.isBrelan() || brelan2.isBrelan()){

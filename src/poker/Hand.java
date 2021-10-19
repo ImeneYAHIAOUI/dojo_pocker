@@ -65,4 +65,13 @@ public class Hand {
         }
         return true;
     }
+
+    public boolean SameValueCards(){
+        for (int i=1 ; i<cartes.size() ;i++){
+            if (!cartes.get(i).sameValue(cartes.get(i-1))){
+                return false;
+            }
+        }
+        return true;
+    }
 }
