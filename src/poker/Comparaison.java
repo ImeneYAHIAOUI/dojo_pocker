@@ -1,3 +1,8 @@
+package poker;
+
+import comparaison.Brelan;
+import comparaison.Full;
+import comparaison.Paire;
 
 public class Comparaison {
 
@@ -20,7 +25,7 @@ public class Comparaison {
     }
 
     /*
-    * Comparaison listes de 2 cartes:
+    * poker.Comparaison listes de 2 cartes:
     *   - Trier avec la valeur la plus haute pour chaque main
     *   - Comparer les 2 resultats et hop !!
     * */
@@ -82,7 +87,7 @@ public class Comparaison {
 
 
 
-    public Carte comparaisonBrelans(Brelan carte1,Brelan carte2){
+    public Carte comparaisonBrelans(Brelan carte1, Brelan carte2){
 
         if(carte1.isBrelan() && !carte2.isBrelan()){
             winner = 1;

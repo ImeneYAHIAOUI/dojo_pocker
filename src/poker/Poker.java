@@ -1,3 +1,5 @@
+package poker;
+
 public class Poker {
 
     public static void main(String[] args) {
@@ -7,8 +9,8 @@ public class Poker {
         Game game1 = new Game();
 
         /*
-         * TypeCarte hérite de Carte
-         * CouleurTypeCarte hérite de Carte
+         * TypeCarte hérite de poker.Carte
+         * CouleurTypeCarte hérite de poker.Carte
          * */
     }
 }

@@ -1,9 +1,12 @@
+package poker;
+
+import utils.InputReader;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Hand {
 
-    //private Carte carte;
     public ArrayList<Carte> cartes;
     public ArrayList<Carte> sortedCards = new ArrayList<>();
     private Carte MaxCarte;
@@ -46,6 +49,10 @@ public class Hand {
         return MaxCarte;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Carte> getSortedCard() {
         return sortedCards;
     }

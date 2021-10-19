@@ -1,4 +1,6 @@
-import java.util.ArrayList;
+package comparaison;
+
+import poker.Hand;
 
 public class Full {
     private Hand hand;

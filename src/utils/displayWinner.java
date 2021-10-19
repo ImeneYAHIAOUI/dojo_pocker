@@ -1,18 +1,34 @@
+package utils;
+
+import poker.Comparaison;
+import poker.Carte;
+
 public class displayWinner {
     private final Comparaison winner;
 
+    /**
+     *
+     * @param winner
+     */
     public displayWinner(Comparaison winner){
         this.winner = winner;
 
     }
+
+    /**
+     *
+     * @return
+     */
+
+    @Override
     public String toString(){
         Carte winningCard = winner.getWinningCard();
         String methode = winner.getMethodeComparaison();
 
-        if(winner.toString().equals("Egalité")){
+        if(winner.toString().equalsIgnoreCase("Egalité")){
             return winner.toString();
         }
-        if(methode.equals("suite") || methode.equals("full")){
+        if(methode.equalsIgnoreCase("suite") || methode.equalsIgnoreCase("full")){
             if(winningCard==null) {
                 return "C'est la " + winner + " qui gagne " + "car c'est une main "+methode;
             }

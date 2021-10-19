@@ -1,5 +1,8 @@
+package comparaison;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import poker.Carte;
 
 public class Paire{
 

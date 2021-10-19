@@ -1,6 +1,9 @@
+package utils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import poker.Carte;
 
 public class InputReader {
 
@@ -15,9 +18,11 @@ public class InputReader {
         if(list.size() != NB_CARTE_MAIN){
             System.out.println("Nombre de cartes incorrect\n");
             System.exit(-1);
+
+
             /*String reponse = carteInput.next();
             if (reponse.equals("o")){
-                new InputReader();
+                new Utils.InputReader();
             }else {
                 System.exit(-1);
             }*/
@@ -33,17 +38,13 @@ public class InputReader {
                 System.exit(-1);
                 /*String reponse = carteInput.next();
                 if (reponse.equals("o")){
-                    new InputReader();
+                    new Utils.InputReader();
                 }else {
                     System.exit(-1);
                 }*/
             }
         }
         main_joueur = carteList;
-
-
-
-
     }
 
     /**
