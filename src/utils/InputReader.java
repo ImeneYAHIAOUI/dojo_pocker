@@ -33,6 +33,27 @@ public class InputReader {
         main_joueur = carteList;
     }
 
+    public InputReader(String s){
+
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(s.split(" ")));
+        if(list.size() != NB_CARTE_MAIN){
+            System.out.println("Nombre de cartes incorrect\n");
+            System.exit(-1);
+        }
+
+        ArrayList<Carte> carteList = new ArrayList<>();
+
+        for (String carte : list) {
+            if(toInt(carte) >=2 && toInt(carte) <= 14){
+                carteList.add(new Carte(carte));
+            }else{
+                System.out.println("Format d'une des carte incorrect");
+                System.exit(-1);
+            }
+        }
+        main_joueur = carteList;
+    }
+
     /**
      *
      * @return
