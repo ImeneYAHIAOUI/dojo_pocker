@@ -32,6 +32,12 @@ class PaireTest {
         p1 = new Paire(cartes);
         p2 = new Paire(cartes2);
         p3 = new Paire(cartes3);
+        p1.isPaire();
+        p2.isPaire();
+        p3.isPaire();
+        p1.is2Paire();
+        p2.is2Paire();
+        p3.is2Paire();
     }
 
     @Test
@@ -43,15 +49,15 @@ class PaireTest {
 
     @Test
     void is2Paire(){
-        assertEquals(p1.is2Paire(), false, "Il n'y a pas de deuxième paire dans la main 1");
-        assertEquals(p2.is2Paire(), true, "Il y a une deuxième paire dans la main 2");
-        assertEquals(p3.is2Paire(), false, "Il n'y a pas de deuxième paire dans la main 3");
+        assertFalse(p1.is2Paire(), "Il n'y a pas de deuxième paire dans la main 1");
+        assertTrue(p2.is2Paire(), "Il y a une deuxième paire dans la main 2");
+        assertFalse(p3.is2Paire(), "Il n'y a pas de deuxième paire dans la main 3");
     }
 
     @Test
     void getValeurMaxPaire(){
         assertEquals(p1.getValeurMaxPaire(), 0);
-        assertEquals(p2.getValeurMaxPaire(), 8);
-        assertEquals(p3.getValeurMaxPaire(), 11);
+        assertEquals(p2.getMaxPaire().getIntValue(), 8);
+        assertEquals(p3.getMaxPaire().getIntValue(), 11);
     }
 }

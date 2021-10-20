@@ -8,7 +8,7 @@ public class Paire{
 
     ArrayList<Carte> cards;
     ArrayList<Integer> carte_paire = new ArrayList<>();
-    protected int ValeurMaxPaire = 0;
+    int ValeurMaxPaire;
 
 
     /**

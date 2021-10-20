@@ -29,10 +29,11 @@ class InputReaderTest {
 
     @Test
     void getMain_joueur() {
-        assertEquals(input1.getMain_joueur(),mainJoueurTest);
+        assertEquals(input1.getMain_joueur().toString(),mainJoueurTest.toString());
     }
 
     @Test
     void toInt() {
+
     }
 }
