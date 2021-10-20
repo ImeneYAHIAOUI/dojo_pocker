@@ -57,9 +57,9 @@ public class Hand {
         return sortedCards;
     }
 
-    public boolean isSorted(){
-        for (int i=0 ; i<cartes.size() ;i++){
-            if (! cartes.get(i).sameValue(sortedCards.get(i))){
+    public boolean isConsecutive(){
+        for (int i=1 ; i<cartes.size() ;i++){
+            if ( cartes.get(i).intValue != cartes.get(i-1).intValue+1){
                 return false;
             }
         }

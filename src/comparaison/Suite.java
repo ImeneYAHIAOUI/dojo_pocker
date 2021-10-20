@@ -28,7 +28,7 @@ public class Suite {
      * @return
      */
     public boolean isSuite(){
-        return hand.isSorted() && !brelan.isBrelan() && !paire.isPaire();
+        return hand.isConsecutive() && !brelan.isBrelan() && !paire.isPaire();
 
     }
 
