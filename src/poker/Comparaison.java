@@ -125,9 +125,6 @@ public class Comparaison {
             return paire2.getMaxPaire();
         }
         return comparaison_valeur_haute(paire1.getMaxPaire(),paire2.getMaxPaire());
-
-
-
     }
 
     /**
@@ -212,6 +209,7 @@ public class Comparaison {
      *
      * @return
      */
+    @Override
     public String toString(){
         return switch (winner){
             case 1 -> "main 1";

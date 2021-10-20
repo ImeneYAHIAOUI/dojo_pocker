@@ -18,7 +18,6 @@ public class Paire{
     public Paire(ArrayList<Carte> cards){
         this.cards = cards;
 
-
         for (int i = 1;i<cards.size(); i++){
 
             Carte currentCard = cards.get(i-1);

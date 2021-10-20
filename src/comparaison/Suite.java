@@ -14,10 +14,19 @@ public class Suite {
         paire = new Paire(hand.getSortedCard());
     }
 
+    /**
+     *
+     * @return
+     */
     public Hand getHand(){
         return hand;
     }
 
+
+    /**
+     *
+     * @return
+     */
     public boolean isSuite(){
         return hand.isSorted() && !brelan.isBrelan() && !paire.isPaire();
 

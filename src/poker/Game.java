@@ -23,7 +23,6 @@ public class Game {
         //Etape comparaison
         Comparaison winningHand = new Comparaison(main1,main2);
 
-
         System.out.println(new displayWinner(winningHand));
 
 

@@ -18,14 +18,6 @@ public class InputReader {
         if(list.size() != NB_CARTE_MAIN){
             System.out.println("Nombre de cartes incorrect\n");
             System.exit(-1);
-
-
-            /*String reponse = carteInput.next();
-            if (reponse.equals("o")){
-                new Utils.InputReader();
-            }else {
-                System.exit(-1);
-            }*/
         }
 
         ArrayList<Carte> carteList = new ArrayList<>();
@@ -36,12 +28,6 @@ public class InputReader {
             }else{
                 System.out.println("Format d'une des carte incorrect");
                 System.exit(-1);
-                /*String reponse = carteInput.next();
-                if (reponse.equals("o")){
-                    new Utils.InputReader();
-                }else {
-                    System.exit(-1);
-                }*/
             }
         }
         main_joueur = carteList;

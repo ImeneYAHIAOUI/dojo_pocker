@@ -24,10 +24,7 @@ public class Carte {
                 case "R" -> intValue = 13;
                 default -> intValue = 14;
             }
-
-
         }
-
     }
 
     /**
