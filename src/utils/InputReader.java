@@ -7,17 +7,16 @@ import poker.Carte;
 
 public class InputReader {
 
-    private final ArrayList<Carte> main_joueur;
+    private ArrayList<Carte> main_joueur;
     private final int NB_CARTE_MAIN = 5;
 
     public InputReader(){
         Scanner carteInput = new Scanner(System.in);
-
         String c1 = carteInput.nextLine();
         ArrayList<String> list = new ArrayList<>(Arrays.asList(c1.split(" ")));
         if(list.size() != NB_CARTE_MAIN){
-            System.out.println("Nombre de cartes incorrect\n");
-            System.exit(-1);
+            System.out.print("Nombre de cartes incorrect\nveuillez saisir une nouvelle main: ");
+            return;
         }
 
         ArrayList<Carte> carteList = new ArrayList<>();
@@ -26,8 +25,8 @@ public class InputReader {
             if(toInt(carte) >=2 && toInt(carte) <= 14){
                 carteList.add(new Carte(carte));
             }else{
-                System.out.println("Format d'une des carte incorrect");
-                System.exit(-1);
+                System.out.print("Format d'une des carte incorrect\nveuillez saisir une nouvelle main: ");
+                return;
             }
         }
         main_joueur = carteList;
@@ -37,8 +36,8 @@ public class InputReader {
 
         ArrayList<String> list = new ArrayList<>(Arrays.asList(s.split(" ")));
         if(list.size() != NB_CARTE_MAIN){
-            System.out.println("Nombre de cartes incorrect\n");
-            System.exit(-1);
+
+            return;
         }
 
         ArrayList<Carte> carteList = new ArrayList<>();
@@ -47,8 +46,8 @@ public class InputReader {
             if(toInt(carte) >=2 && toInt(carte) <= 14){
                 carteList.add(new Carte(carte));
             }else{
-                System.out.println("Format d'une des carte incorrect");
-                System.exit(-1);
+
+                return;
             }
         }
         main_joueur = carteList;
@@ -60,6 +59,7 @@ public class InputReader {
      */
     public ArrayList<Carte> getMain_joueur(){
         return main_joueur;
+
     }
 
     /**

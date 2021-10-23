@@ -14,7 +14,8 @@ public class Hand {
 
     public Hand(){
         cartes = new InputReader().getMain_joueur();
-        getTrieCartes();
+
+        if (!(cartes == null)) getTrieCartes();
     }
 
     /**

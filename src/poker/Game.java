@@ -4,7 +4,8 @@ import utils.displayWinner;
 
 public class Game {
 
-    private final Hand main1, main2;
+    private Hand main1;
+    private Hand main2;
 
     /*
      * On déclare les 2 objets mains
@@ -16,8 +17,14 @@ public class Game {
     public Game(){
         System.out.print("Main 1: ");
         main1 = new Hand();
+        while (main1.getCartes() == null){
+            main1 = new Hand();
+        }
         System.out.print("Main 2: ");
         main2 = new Hand();
+        while (main2.getCartes() == null){
+            main2 = new Hand();
+        }
         System.out.println("Voici vos cartes : " + main1.getCartes() + " et " + main2.getCartes());
 
         //Etape comparaison
