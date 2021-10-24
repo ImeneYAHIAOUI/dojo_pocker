@@ -12,7 +12,7 @@ public class Hand {
     private Carte MaxCarte;
 
 
-    public Hand(){
+    public Hand() {
         cartes = new InputReader().getMain_joueur();
 
         if (cartes != null) getTrieCartes();
@@ -62,6 +62,10 @@ public class Hand {
         return sortedCards;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isConsecutive(){
         for (int i=1 ; i<cartes.size() ;i++){
             if ( cartes.get(i).intValue != cartes.get(i-1).intValue+1){
@@ -71,6 +75,10 @@ public class Hand {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean SameValueCards(){
         for (int i=1 ; i<cartes.size() ;i++){
             if (!cartes.get(i).sameValue(cartes.get(i-1))){

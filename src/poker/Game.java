@@ -14,7 +14,7 @@ public class Game {
      * On print le retour de la méthode comparaison qui renvoie la carte qui a permit de gagner
      *
      * */
-    public Game(){
+    public Game() {
         System.out.print("Main 1: ");
         main1 = new Hand();
         while (main1.getCartes() == null || main1.SameValueCards()){

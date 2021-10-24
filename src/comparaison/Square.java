@@ -14,6 +14,10 @@ public class Square {
         SquareCard = cards.get(2);
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isSquare(){
 
         boolean isSquare = true;
@@ -35,6 +39,10 @@ public class Square {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public Carte getSquareCard(){
         if(this.isSquare()) return SquareCard;
         return null;

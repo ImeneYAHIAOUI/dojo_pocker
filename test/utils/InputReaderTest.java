@@ -29,7 +29,7 @@ class InputReaderTest {
 
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws PokerException {
         stdin1 = "5 5 5 6 7";
         mainJoueurTest.add(new Carte("5"));
         mainJoueurTest.add(new Carte("5"));
@@ -119,11 +119,5 @@ class InputReaderTest {
         assertEquals(0, input1.toInt("ç_#!"));
 
         assertNotEquals(15, input1.toInt("N"));
-
-
-
-
-
-
     }
 }

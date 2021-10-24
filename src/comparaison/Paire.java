@@ -68,10 +68,18 @@ public class Paire{
         else return null;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getValeurMaxPaire(){
         return ValeurMaxPaire;
     }
 
+    /**
+     *
+     * @return
+     */
     public int nbPaire(){
         return carte_paire.size();
     }

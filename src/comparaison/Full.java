@@ -6,12 +6,18 @@ public class Full {
     private Hand hand;
     private Brelan brelan;
     private Paire paire;
+
+
     public Full(Hand cartes){
         hand = cartes;
         brelan = new Brelan(cartes.getSortedCard());
         paire = new Paire(cartes.getSortedCard());
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isFull(){
         boolean isBrelan = brelan.isBrelan();
         boolean isPaire = paire.isPaire();
@@ -23,10 +29,18 @@ public class Full {
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     public Hand getHand(){
         return hand;
     }
 
+    /**
+     *
+     * @return
+     */
     public Brelan getBrelan() {
         return brelan;
     }

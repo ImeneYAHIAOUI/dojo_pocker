@@ -36,7 +36,6 @@ public class InputReader {
 
         ArrayList<String> list = new ArrayList<>(Arrays.asList(s.split(" ")));
         if(list.size() != NB_CARTE_MAIN){
-
             return;
         }
 
@@ -46,7 +45,6 @@ public class InputReader {
             if(toInt(carte) >=2 && toInt(carte) <= 14){
                 carteList.add(new Carte(carte));
             }else{
-
                 return;
             }
         }
