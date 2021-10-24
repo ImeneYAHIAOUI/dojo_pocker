@@ -1,9 +1,6 @@
 package poker;
 
-import comparaison.Brelan;
-import comparaison.Full;
-import comparaison.Paire;
-import comparaison.Suite;
+import comparaison.*;
 
 public class Comparaison {
 
@@ -56,6 +53,24 @@ public class Comparaison {
 
     /**
      *
+     * @param Square1
+     * @param Square2
+     * @return
+     */
+    public Carte compareisonSquare(Square Square1, Square Square2){
+        if (Square1.isSquare() && !Square2.isSquare()){
+            winner = 1;
+            return Square1.getSquareCard();
+        }
+        if (!Square1.isSquare() && Square2.isSquare()){
+            winner = 2;
+            return Square2.getSquareCard();
+        }
+        return comparaison_valeur_haute(Square1.getSquareCard(),Square2.getSquareCard());
+    }
+
+    /**
+     *
      * @param full1
      * @param full2
      * @return
@@ -71,6 +86,13 @@ public class Comparaison {
         }
         return comparaisonBrelans(full1.getBrelan(), full2.getBrelan());
     }
+
+    /**
+     *
+     * @param suite1
+     * @param suite2
+     * @return
+     */
     public Carte comparaisonSuite(Suite suite1, Suite suite2){
         if (suite1.isSuite() && !suite2.isSuite()){
             winner = 1;
@@ -149,6 +171,9 @@ public class Comparaison {
      * Setter des poids des comparaisons
      */
     public void winnerSetter(){
+        Square Square1 = new Square(hand1.getSortedCard());
+        Square Square2 = new Square(hand2.getSortedCard());
+
         Suite suite1 = new Suite(hand1);
         Suite suite2 = new Suite(hand2);
 
@@ -161,7 +186,13 @@ public class Comparaison {
         Paire paire_main1 = new Paire(hand1.getSortedCard());
         Paire paire_main2 = new Paire(hand2.getSortedCard());
 
-        if (full1.isFull() || full2.isFull()){
+        if (Square1.isSquare() || Square2.isSquare()){
+            winningCard = compareisonSquare(Square1,Square2);
+            methodeComparaison = "carré";
+
+        }
+
+        else if (full1.isFull() || full2.isFull()){
             winningCard = compareisonFull(full1,full2);
             methodeComparaison = "full";
         }

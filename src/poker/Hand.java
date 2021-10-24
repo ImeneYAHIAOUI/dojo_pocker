@@ -15,9 +15,13 @@ public class Hand {
     public Hand(){
         cartes = new InputReader().getMain_joueur();
 
-        if (!(cartes == null)) getTrieCartes();
+        if (cartes != null) getTrieCartes();
     }
+    public Hand(ArrayList<Carte> cartes){
+        this.cartes = cartes;
 
+        if (cartes != null) getTrieCartes();
+    }
     /**
      *
      * @return
@@ -73,6 +77,7 @@ public class Hand {
                 return false;
             }
         }
+        System.out.print("On ne peut pas avoir 5 cartes de la même valeur\nveuillez saisir une nouvelle main: ");
         return true;
     }
 }

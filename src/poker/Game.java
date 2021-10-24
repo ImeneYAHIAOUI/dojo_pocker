@@ -17,12 +17,12 @@ public class Game {
     public Game(){
         System.out.print("Main 1: ");
         main1 = new Hand();
-        while (main1.getCartes() == null){
+        while (main1.getCartes() == null || main1.SameValueCards()){
             main1 = new Hand();
         }
         System.out.print("Main 2: ");
         main2 = new Hand();
-        while (main2.getCartes() == null){
+        while (main2.getCartes() == null || main2.SameValueCards()){
             main2 = new Hand();
         }
         System.out.println("Voici vos cartes : " + main1.getCartes() + " et " + main2.getCartes());
@@ -31,7 +31,6 @@ public class Game {
         Comparaison winningHand = new Comparaison(main1,main2);
 
         System.out.println(new displayWinner(winningHand));
-
 
 
     }

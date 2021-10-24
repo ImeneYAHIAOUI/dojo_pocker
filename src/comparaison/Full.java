@@ -1,7 +1,6 @@
 package comparaison;
 
 import poker.Hand;
-import java.util.Collections;
 
 public class Full {
     private Hand hand;
@@ -19,7 +18,7 @@ public class Full {
         if (isBrelan && isPaire) {
             boolean justBrelan = !brelan.getCarteBrelan().sameValue(paire.getMaxPaire());
 
-            return justBrelan || hand.SameValueCards();
+            return justBrelan;
         }
         return false;
     }
@@ -27,13 +26,12 @@ public class Full {
     public Hand getHand(){
         return hand;
     }
+
     public Brelan getBrelan() {
         return brelan;
     }
 
-    public Paire getPaire() {
-        return paire;
-    }
+
 }
 
 

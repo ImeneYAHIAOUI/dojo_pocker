@@ -5,7 +5,7 @@ import poker.Carte;
 
 
 public class Brelan {
-    ArrayList<Carte> cards;
+    ArrayList<Carte> sortedCards;
     Carte carteBrelan;
 
     /**
@@ -13,7 +13,7 @@ public class Brelan {
      * @param cards
      */
     public Brelan(ArrayList<Carte> cards){
-        this.cards = cards;
+        this.sortedCards = cards;
         for (int i = 2;i<cards.size(); i++){
             Carte previewsCard = cards.get(i-2);
             Carte currentCard = cards.get(i-1);
@@ -44,11 +44,5 @@ public class Brelan {
     }
 
 
-    /**
-     *
-     * @return
-     */
-    public String toString(){
-        return carteBrelan.toString();
-    }
+
 }
