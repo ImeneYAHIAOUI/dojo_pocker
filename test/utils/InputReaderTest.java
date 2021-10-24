@@ -29,7 +29,7 @@ class InputReaderTest {
 
 
     @BeforeEach
-    void setUp() throws PokerException {
+    void setUp() {
         stdin1 = "5 5 5 6 7";
         mainJoueurTest.add(new Carte("5"));
         mainJoueurTest.add(new Carte("5"));

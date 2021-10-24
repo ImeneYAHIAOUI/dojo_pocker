@@ -76,20 +76,4 @@ public class Paire{
         return ValeurMaxPaire;
     }
 
-    /**
-     *
-     * @return
-     */
-    public int nbPaire(){
-        return carte_paire.size();
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String toString(){
-        return String.valueOf(ValeurMaxPaire);
-    }
-
 }

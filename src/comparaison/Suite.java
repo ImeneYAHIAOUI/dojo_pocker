@@ -14,14 +14,6 @@ public class Suite {
         paire = new Paire(hand.getSortedCard());
     }
 
-    /**
-     *
-     * @return
-     */
-    public Hand getHand(){
-        return hand;
-    }
-
 
     /**
      *
@@ -31,5 +23,17 @@ public class Suite {
         return hand.isConsecutive() && !brelan.isBrelan() && !paire.isPaire();
 
     }
+
+
+    /**
+     *
+     * @return
+     */
+    public Hand getHand(){
+        return hand;
+    }
+
+
+
 
 }

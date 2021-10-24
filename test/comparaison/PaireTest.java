@@ -1,12 +1,9 @@
 package comparaison;
 
-import comparaison.Paire;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import poker.Carte;
-import comparaison.Paire;
 
 import java.util.ArrayList;
 
@@ -42,9 +39,9 @@ class PaireTest {
 
     @Test
     void isPaire() {
-        assertEquals(p1.isPaire(),false,"La main 1 n'a pas de paire, donc OK !");
-        assertEquals(p2.isPaire(),true,"La main 2 a une paire, donc OK !");
-        assertEquals(p3.isPaire(),true,"La main 2 a une paire, donc OK !");
+        assertFalse(p1.isPaire(),"La main 1 n'a pas de paire, donc OK !");
+        assertTrue(p2.isPaire(),"La main 2 a une paire, donc OK !");
+        assertTrue(p3.isPaire(),"La main 2 a une paire, donc OK !");
     }
 
     @Test
@@ -60,4 +57,11 @@ class PaireTest {
         assertEquals(p2.getMaxPaire().getIntValue(), 8);
         assertEquals(p3.getMaxPaire().getIntValue(), 11);
     }
+
+
+
+
+
+
+
 }
