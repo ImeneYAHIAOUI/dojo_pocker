@@ -60,23 +60,19 @@ public class HandTest {
         assertEquals(mainJoueurTest,hand1.getCartes());
 
     }
-    @Test
-    void getSortedCard(){
 
-        assertTrue(hand2.getSortedCard().equals(mainJoueurTest));
-    }
     @Test
     void getMaxCarte(){
         assertEquals(9,hand3.getMaxCarte().getIntValue());
     }
     @Test
     void isConsecutive(){
-        assertEquals(hand4.isConsecutive(),true);
-        assertEquals(hand5.isConsecutive(),false);
+        assertTrue(hand4.isConsecutive());
+        assertFalse(hand5.isConsecutive());
     }
     @Test
     void SameValueCards(){
-        assertEquals(hand5.SameValueCards(),true);
-        assertEquals(hand4.SameValueCards(),false);
+        assertTrue(hand5.SameValueCards());
+        assertFalse(hand4.SameValueCards());
     }
 }
