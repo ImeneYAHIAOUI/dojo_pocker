@@ -1,6 +1,6 @@
 package poker;
 
-import utils.displayWinner;
+import utils.DisplayWinner;
 
 public class Game {
 
@@ -30,7 +30,7 @@ public class Game {
         //Etape comparaison
         Comparaison winningHand = new Comparaison(main1,main2);
 
-        System.out.println(new displayWinner(winningHand));
+        System.out.println(new DisplayWinner(winningHand));
 
 
     }

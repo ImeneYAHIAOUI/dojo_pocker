@@ -54,7 +54,7 @@ class BrelanTest {
 
     @Test
     void getCarteBrelan(){
-
+        assertTrue(brelan1.getCarteBrelan().sameValue(new Carte("3")));
         assertNotNull(brelan1.getCarteBrelan());
         assertNull(brelan2.getCarteBrelan());
         assertNull(brelan3.getCarteBrelan());

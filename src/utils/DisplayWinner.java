@@ -3,14 +3,14 @@ package utils;
 import poker.Comparaison;
 import poker.Carte;
 
-public class displayWinner {
+public class DisplayWinner {
     private final Comparaison winner;
 
     /**
      *
      * @param winner
      */
-    public displayWinner(Comparaison winner){
+    public DisplayWinner(Comparaison winner){
         this.winner = winner;
 
     }
@@ -30,9 +30,9 @@ public class displayWinner {
         }
         if(methode.equalsIgnoreCase("suite") || methode.equalsIgnoreCase("full")){
             if(winningCard==null) {
-                return "C'est la " + winner + " qui gagne " + "car c'est une main "+methode;
+                return "C'est la " + winner + " qui gagne car c'est une main "+methode;
             }
-            return "C'est la " + winner + " qui gagne " + "car c'est la main "+methode+" la plus puissante grace à la carte : "+winningCard;
+            return "C'est la " + winner + " qui gagne car c'est la main "+methode+" la plus puissante grace à la carte : "+winningCard;
 
         }
         return "C'est la "+winner+" qui gagne avec "+methode+" : " + winningCard;
