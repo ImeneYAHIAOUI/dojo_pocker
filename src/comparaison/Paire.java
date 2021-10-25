@@ -13,7 +13,14 @@ public class Paire{
 
     /**
      *
-     * @param cards
+     * @param cards la liste de cartes dois être triée pour que les méthodes isPaire et is2Paire
+     *              fonctionnent bien
+     *              le constructeur initilise cards et remplie la carte_paire par les valeurs
+     *              de paires trouvés
+     *
+     *              exemple: 2 3 4 2 8 -> carte_paire = [2]
+     *                       4 3 4 3 5 -> carte_paire = [4,3]
+     *                       3 9 8 2 7 -> carte_paire = []
      */
     public Paire(ArrayList<Carte> cards){
         this.cards = cards;
@@ -33,7 +40,10 @@ public class Paire{
 
     /**
      *
-     * @return
+     * @return si carte_paire contient 2 elements, la main contient 2 paires distincts
+     * donc c'est une main deuxPaires.
+     * la valeur de la paire la plus puissante est dans le deuxieme élément de carte_paire la liste des
+     * cartes est déjà triée
      */
     public boolean is2Paire(){
         int nbPaire = carte_paire.size();
@@ -47,7 +57,9 @@ public class Paire{
 
     /**
      *
-     * @return
+     * @return si carte_paire n'est pas vide, la main contient au moin une paire
+     *      donc c'est une main paire
+     *
      */
     public boolean isPaire(){
         int nbPaire = carte_paire.size();
@@ -61,7 +73,7 @@ public class Paire{
 
     /**
      *
-     * @return
+     * @return getter de la carte de la paire la plus puissante
      */
     public Carte getMaxPaire(){
         if(ValeurMaxPaire != 0) return new Carte(Integer.toString(ValeurMaxPaire));
@@ -70,7 +82,7 @@ public class Paire{
 
     /**
      *
-     * @return
+     * @return getter de la valeur de la carte paire la plus puissante
      */
     public int getValeurMaxPaire(){
         return ValeurMaxPaire;

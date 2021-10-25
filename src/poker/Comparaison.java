@@ -15,6 +15,8 @@ public class Comparaison {
      *
      * @param main1
      * @param main2
+     * le constructeur initialise les deux mains,puis fais appelle a la méthode winnerSetter qui fait
+     * les comparaisons nécessaires pour initialiser winner, winningCart et methodeComparaison.
      */
     public Comparaison(Hand main1, Hand main2){
         hand1 = main1;
@@ -31,9 +33,10 @@ public class Comparaison {
 
     /**
      *
-     * @param BestCard1
-     * @param BestCard2
-     * @return
+     * @param BestCard1 meilleure carte de main1
+     * @param BestCard2 meilleure carte de main2
+     * @return cette méthode renvoie la main gagnante obtenue par comparaison des valeurs des deux cartes passées
+     * en parametres. En cas d'égalité, en renvoie un null
      */
     public Carte comparaison_valeur_haute(Carte BestCard1,Carte BestCard2){
 
@@ -53,9 +56,11 @@ public class Comparaison {
 
     /**
      *
-     * @param Square1
-     * @param Square2
-     * @return
+     * @param Square1 objet Square de la main1
+     * @param Square2 objet Square de la main1
+     * @return cette méthode renvoie la main gagnante obtenue en vérifiant quelle main est Square,
+     *      si c'est le cas pour les deux, on renvoie le résultat
+     *      de comparaison_valeur_haute(Square1.getSquareCard(),Square2.getSquareCard())
      */
     public Carte compareisonSquare(Square Square1, Square Square2){
         if (Square1.isSquare() && !Square2.isSquare()){
@@ -71,9 +76,11 @@ public class Comparaison {
 
     /**
      *
-     * @param full1
-     * @param full2
-     * @return
+     * @param full1 objet Full de main1
+     * @param full2 objet Full de main2
+     * @return cette méthode renvoie la main gagnante obtenue en vérifiant quelle main est full,
+     *         si c'est le cas pour les deux, on renvoie le résultat
+     *         de comparaison_valeur_haute(full1.getBrelan(), full2.getBrelan())
      */
     public Carte compareisonFull(Full full1, Full full2){
         if (full1.isFull() && !full2.isFull()){
@@ -89,9 +96,11 @@ public class Comparaison {
 
     /**
      *
-     * @param suite1
-     * @param suite2
-     * @return
+     * @param suite1 objet Suite de main1
+     * @param suite2 objet Suite de main2
+     * @return cette méthode renvoie la main gagnante obtenue en vérifiant quelle main est une suite,
+     *         si c'est le cas pour les deux, on renvoie le résultat
+     *         de comparaison_valeur_haute(main1.getMaxCarte(),main2.getMaxCarte)
      */
     public Carte comparaisonSuite(Suite suite1, Suite suite2){
         if (suite1.isSuite() && !suite2.isSuite()){
@@ -110,9 +119,11 @@ public class Comparaison {
 
     /**
      *
-     * @param carte1
-     * @param carte2
-     * @return
+     * @param carte1 objet Brelan de main1
+     * @param carte2 objet Brelan de main2
+     * @return cette méthode renvoie la main gagnante obtenue en vérifiant quelle main contient un brelan,
+     *         si c'est le cas pour les deux, on renvoie le résultat
+     *         de comparaison_valeur_haute(carte1.getCarteBrelan(), carte2.getCarteBrelan())
      */
 
     public Carte comparaisonBrelans(Brelan carte1, Brelan carte2){
@@ -132,9 +143,11 @@ public class Comparaison {
 
     /**
      *
-     * @param paire1
-     * @param paire2
-     * @return
+     * @param paire1 objet paire de main1
+     * @param paire2 objet paire de main2
+     * @return cette méthode renvoie la main gagnante obtenue en vérifiant quelle main contient deux paires distincts,
+     *         si c'est le cas pour les deux, on renvoie le résultat
+     *         de comparaison_valeur_haute(paire1.getMaxPaire(),paire2.getMaxPaire())
      */
     public Carte comparaison2Paires(Paire paire1, Paire paire2){
         if(paire1.is2Paire() && !paire2.is2Paire()){
@@ -151,9 +164,11 @@ public class Comparaison {
 
     /**
      *
-     * @param paire1
-     * @param paire2
-     * @return
+     * @param paire1 objet Paire de main1
+     * @param paire2 objet Paire de main2
+     * @return cette méthode renvoie la main gagnante obtenue en vérifiant quelle main contient une paire,
+     *         si c'est le cas pour les deux, on renvoie le résultat
+     *         de comparaison_valeur_haute(paire1.getMaxPaire(),paire2.getMaxPaire())
      */
     public Carte comparaisonPaires(Paire paire1, Paire paire2){
         if(paire1.isPaire() && !paire2.isPaire()){
@@ -168,7 +183,10 @@ public class Comparaison {
     }
 
     /**
-     * Setter des poids des comparaisons
+     * Setter de winner, winnerCard et winner et winningMethode
+     * on crée des objets Square, Suite, Full, Brelan et Paire pour les deux main
+     * et on vérifie en fonction de la priorité des méthodes de comparaison
+     * les caractéristique des mains pour choisir quel méthode de comparaison utiliser.
      */
     public void winnerSetter(){
         Square Square1 = new Square(hand1.getSortedCard());
@@ -222,7 +240,7 @@ public class Comparaison {
 
     /**
      *
-     * @return
+     * @return getter carte gagnante, si elle n'existe pas, on renvoie un null
      */
     public Carte getWinningCard(){
         return winningCard;
@@ -230,7 +248,7 @@ public class Comparaison {
 
     /**
      *
-     * @return
+     * @return getter de la méthode de comparaison
      */
     public String getMethodeComparaison(){
         return methodeComparaison;
@@ -238,7 +256,7 @@ public class Comparaison {
 
     /**
      *
-     * @return
+     * @return un objet comparaison affiche la main gagnate ou égalité
      */
     @Override
     public String toString(){
