@@ -11,7 +11,9 @@ public class Carte {
 
     /**
      *
-     * @param value
+     * @param value on reçoie de l'entrée standard des chaines de caracteres contenant les main
+     *              donc on doit d'abord obtenir la valeur de la carte en int. On utlise le switch
+     *              pour obtenir les valeurs de "V", "D", "R" et "A"
      */
     public Carte(String value) {
         this.value = value;
@@ -45,7 +47,7 @@ public class Carte {
 
     /**
      *
-     * @return
+     * @return getter de la valeur int de la carte
      */
     public Integer getIntValue() {
         return intValue;
@@ -54,7 +56,7 @@ public class Carte {
     /**
      *
      * @param carte
-     * @return
+     * @return cette méthode vérifie si deux cartes ont la meme valeur en comparant leurs valeurs int
      */
     public boolean sameValue(Carte carte){
         return this.intValue.equals(carte.intValue);

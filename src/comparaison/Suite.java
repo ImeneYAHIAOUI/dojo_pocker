@@ -8,26 +8,27 @@ public class Suite {
     private Brelan brelan;
     private Paire paire;
 
+
+
     public Suite(Hand hand){
         this.hand = hand;
-        brelan = new Brelan(hand.getSortedCard());
-        paire = new Paire(hand.getSortedCard());
     }
 
 
     /**
      *
-     * @return
+     * @return la méthode isConsecutive() vérifie si la main contient des valeurs consicutives,
+     *il suffis de l'appeller pour verifier si une main est une suite
      */
     public boolean isSuite(){
-        return hand.isConsecutive() && !brelan.isBrelan() && !paire.isPaire();
+        return hand.isConsecutive();
 
     }
 
 
     /**
      *
-     * @return
+     * @return getter de la main
      */
     public Hand getHand(){
         return hand;

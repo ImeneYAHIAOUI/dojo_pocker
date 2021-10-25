@@ -8,7 +8,8 @@ public class DisplayWinner {
 
     /**
      *
-     * @param winner
+     * @param winner cette objet Comparaison cert à récupérer la main gagnante, la carte gagnat si elle existe
+     *               est la méthode de comparaison utilisée
      */
     public DisplayWinner(Comparaison winner){
         this.winner = winner;
@@ -17,7 +18,7 @@ public class DisplayWinner {
 
     /**
      *
-     * @return
+     * @return on renvoie le message final du résutat de la partie
      */
 
     @Override

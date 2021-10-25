@@ -7,11 +7,17 @@ public class Game {
     private Hand main1;
     private Hand main2;
 
-    /*
+    /**
      * On déclare les 2 objets mains
      *
      * Création de l'objet comparaison qui fait appel à la class avec comme param les 2 mains
      * On print le retour de la méthode comparaison qui renvoie la carte qui a permit de gagner
+     *
+     * apres l'initialisation d'une main, on vérifie si elle est valide, on demande au joueur de resaisir
+     * la main tant que ce n'est pas le cas
+     *
+     * si InputReader trouve que la main n'est pas valide, elle renvoie une liste non initialisée (null)
+     * la méthode SameValueCards vérifie si les mains de cartes sont toutes de la même valeur
      *
      * */
     public Game() {
