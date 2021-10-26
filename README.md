@@ -25,7 +25,7 @@ In the event of a tie: Highest card wins.
 
 How does it work:
 
-Once the programme is compiled and executed, the user will be asked to enter the first hand in the form of a  
+Once the program is compiled and executed, the user will be asked to enter the first hand in the form of a  
 string, separating ech card by a space.
 If the user enter an invalid hand (incorrect number of cards or an invalid card), 
 they will be asked to submit a new hand.
@@ -35,7 +35,7 @@ Same process is repeated for the second hand.
 Once both hands are successfully submitted, the program will use the different comparison classes to get and display the result of
 the game.
 
-Exemple:
+Example:
 
 Main 1: 4 R 3 R R 
 
