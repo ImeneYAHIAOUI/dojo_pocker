@@ -88,4 +88,8 @@ public class Paire{
         return ValeurMaxPaire;
     }
 
+    public Carte getMinPaire(){
+        if(is2Paire()) return new Carte(Integer.toString(carte_paire.get(0)));
+        return null;
+    }
 }

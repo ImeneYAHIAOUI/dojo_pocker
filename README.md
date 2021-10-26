@@ -43,7 +43,7 @@ Main 2: A 3 A 3 3
 
 Voici vos cartes : [4, R, 3, R, R] et [A, 3, A, 3, 3]
 
-C'est la main 1 qui gagne avec brelan : R
+C'est la main 2 qui gagne car c'est une main full
 
 
 

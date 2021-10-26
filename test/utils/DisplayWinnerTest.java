@@ -198,8 +198,8 @@ class DisplayWinnerTest {
      void TestToString(){
         assertEquals(displayWinner1.toString(),"C'est la "+ comparaison1 + " qui gagne avec "+comparaison1.getMethodeComparaison()+" : "+comparaison1.getWinningCard());
         assertEquals(displayWinner2.toString(),"C'est la "+ comparaison2 + " qui gagne avec "+comparaison2.getMethodeComparaison()+" : "+comparaison2.getWinningCard());
-        assertEquals(displayWinner3.toString(),"C'est la "+ comparaison3 + " qui gagne avec "+comparaison3.getMethodeComparaison()+" : "+comparaison3.getWinningCard());
-        assertEquals(displayWinner4.toString(),"C'est la "+ comparaison4 + " qui gagne avec "+comparaison4.getMethodeComparaison()+" : "+comparaison4.getWinningCard());
+        assertEquals(displayWinner3.toString(),"C'est la "+ comparaison3 + " qui gagne car c'est la main "+comparaison3.getMethodeComparaison()+" la plus puissante grace à la carte : "+comparaison3.getWinningCard());
+        assertEquals(displayWinner4.toString(),"C'est la "+ comparaison4 + " qui gagne car c'est une main "+comparaison4.getMethodeComparaison());
 
         assertEquals(displayWinner5.toString(),"C'est la "+ comparaison5 + " qui gagne car c'est la main "+comparaison5.getMethodeComparaison()+" la plus puissante grace à la carte : "+comparaison5.getWinningCard());
         assertEquals(displayWinner6.toString(),"C'est la "+ comparaison6 + " qui gagne car c'est une main "+comparaison6.getMethodeComparaison());

@@ -186,9 +186,9 @@ class ComparaisonTest {
 
     @Test
     void compareisonFull() {
-        assertEquals(comparaison1.compareisonFull(full1,full2).getIntValue(),7);
-        assertEquals(comparaison1.compareisonFull(full2,full1).getIntValue(),7);
-        assertNull(comparaison1.compareisonFull(full2, full2));
+        assertEquals(comparaison1.comparaisonFull(full1,full2).getIntValue(),7);
+        assertEquals(comparaison1.comparaisonFull(full2,full1).getIntValue(),7);
+        assertNull(comparaison1.comparaisonFull(full2, full2));
     }
 
     @Test
@@ -214,9 +214,9 @@ class ComparaisonTest {
     }
     @Test
     void comparaisonSquare() {
-        assertEquals(comparaison1.compareisonSquare(carre1,carre2).getIntValue(),6);
-        assertEquals(comparaison1.compareisonSquare(carre2,carre1).getIntValue(),6);
-        assertNull(comparaison1.compareisonSquare(carre1, carre1));
+        assertEquals(comparaison1.comparaisonSquare(carre1,carre2).getIntValue(),6);
+        assertEquals(comparaison1.comparaisonSquare(carre2,carre1).getIntValue(),6);
+        assertNull(comparaison1.comparaisonSquare(carre1, carre1));
     }
     @Test
     void comparaisonPaires() {

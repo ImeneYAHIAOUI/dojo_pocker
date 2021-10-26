@@ -27,13 +27,14 @@ public class Full {
      */
     public boolean isFull(){
         boolean isBrelan = brelan.isBrelan();
-        boolean isPaire = paire.isPaire();
-        if (isBrelan && isPaire) {
-            boolean justBrelan = !brelan.getCarteBrelan().sameValue(paire.getMaxPaire());
+
+        boolean is2Paire = paire.is2Paire();
+        if (isBrelan && is2Paire) {
+            boolean justBrelan = !brelan.getCarteBrelan().sameValue(paire.getMaxPaire()) || !brelan.getCarteBrelan().sameValue(paire.getMinPaire());
 
             return justBrelan;
         }
-        return false;
+        else return false;
     }
 
     /**

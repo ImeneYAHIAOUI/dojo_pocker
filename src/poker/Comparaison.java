@@ -62,7 +62,7 @@ public class Comparaison {
      *      si c'est le cas pour les deux, on renvoie le résultat
      *      de comparaison_valeur_haute(Square1.getSquareCard(),Square2.getSquareCard())
      */
-    public Carte compareisonSquare(Square Square1, Square Square2){
+    public Carte comparaisonSquare(Square Square1, Square Square2){
         if (Square1.isSquare() && !Square2.isSquare()){
             winner = 1;
             return Square1.getSquareCard();
@@ -82,7 +82,7 @@ public class Comparaison {
      *         si c'est le cas pour les deux, on renvoie le résultat
      *         de comparaison_valeur_haute(full1.getBrelan(), full2.getBrelan())
      */
-    public Carte compareisonFull(Full full1, Full full2){
+    public Carte comparaisonFull(Full full1, Full full2){
         if (full1.isFull() && !full2.isFull()){
             winner = 1;
             return null;
@@ -205,13 +205,12 @@ public class Comparaison {
         Paire paire_main2 = new Paire(hand2.getSortedCard());
 
         if (Square1.isSquare() || Square2.isSquare()){
-            winningCard = compareisonSquare(Square1,Square2);
+            winningCard = comparaisonSquare(Square1,Square2);
             methodeComparaison = "carré";
 
         }
-
         else if (full1.isFull() || full2.isFull()){
-            winningCard = compareisonFull(full1,full2);
+            winningCard = comparaisonFull(full1,full2);
             methodeComparaison = "full";
         }
         else if (suite1.isSuite() || suite2.isSuite()){
